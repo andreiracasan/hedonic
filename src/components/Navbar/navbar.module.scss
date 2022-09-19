@@ -1,0 +1,22 @@
+.nav {
+  background-color: #f39e00;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  & .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    & span {
+      display: block;
+    }
+  }
+
+  & .nav__pages {
+    display: flex;
+    align-items: center;
+  }
+}
