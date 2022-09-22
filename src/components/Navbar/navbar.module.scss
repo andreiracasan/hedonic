@@ -1,5 +1,5 @@
 .nav {
-  background-color: #f39e00;
+  background-color: #222;
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 
     & span {
       display: block;
