@@ -30,12 +30,18 @@ const Top = (props: PageProps) => {
   return (
     <ul className={styles.list}>
       {data.map((item, index) => (
-        <li key={item.title}>
-          <span>{index + 1}</span>
-          <div className="data">
+        <li key={item.id}>
+          <div className={styles.top__number}>
+            <span>{index + 1}</span>
+          </div>
+          <div className={styles.top__data}>
             <a href={item.url} target="_blank" rel="noreferrer">
-              {item.title}
+              {item.title} {item.points && <span>({item.points} points)</span>}
             </a>
+            <p>
+              Posted by <u>{item.user}</u> from <u>{item.domain}</u>{' '}
+              {item.time_ago}
+            </p>
           </div>
         </li>
       ))}
