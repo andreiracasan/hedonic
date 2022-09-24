@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 // Components
 import List from '../../components/List';
 
-export default function New(props: { data: [] }) {
+export default function Ask(props: { data: [] }) {
   const { data } = props;
 
   return <List data={data} />;
@@ -13,7 +13,7 @@ export default function New(props: { data: [] }) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { n } = context.query;
 
-  const response = await fetch(`https://api.hnpwa.com/v0/newest/${n}.json`);
+  const response = await fetch(`https://api.hnpwa.com/v0/ask/${n}.json`);
   const err = response.ok ? false : response.status;
 
   const data = err === false ? await response.json() : [];
