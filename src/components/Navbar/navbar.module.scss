@@ -8,9 +8,28 @@
   & .nav__links {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    cursor & span {
+    gap: 0.85rem;
+
+    & .nav__links_home {
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+
+    & span {
       display: block;
+      color: #999;
+    }
+
+    & a {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      font-size: 0.85rem;
+
+      &:hover {
+        color: #ddd;
+        text-decoration: underline;
+      }
     }
   }
 
