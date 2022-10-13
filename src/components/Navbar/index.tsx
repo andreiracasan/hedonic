@@ -2,12 +2,9 @@
 import styles from './navbar.module.scss';
 
 // Next
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const router = useRouter();
-
   return (
     <nav className={styles.nav}>
       <div className={styles.nav__links}>

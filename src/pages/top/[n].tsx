@@ -7,20 +7,26 @@ import List from '../../components/List';
 export default function Top(props: { data: [] }) {
   const { data } = props;
 
-  return <List data={data} />;
+  return data.length === 0 ? (
+    <h1 className="global__error">
+      Sorry, something went wrong! Please try again later.
+    </h1>
+  ) : (
+    <List data={data} />
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { n } = context.query;
 
-  const response = await fetch(`https://api.hnpwa.com/v0/news/${n}.json`);
-  const err = response.ok ? false : response.status;
+  try {
+    const response = await fetch(`https://api.hnpwa.com/v0/news/${n}.json`);
+    const err = response.ok ? false : response.status;
 
-  const data = err === false ? await response.json() : [];
+    const data = err === false ? await response.json() : [];
 
-  return {
-    props: {
-      data,
-    },
-  };
+    return { props: { data } };
+  } catch {
+    return { props: { data: [] } };
+  }
 };
