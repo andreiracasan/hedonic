@@ -1,4 +1,24 @@
 .pagination {
-  background-color: gray;
+  display: flex;
+  justify-content: center;
   margin: 2rem 0 0 0;
+
+  &__container {
+    & button {
+      all: unset;
+      padding: 0.25rem;
+      text-align: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 0.25rem;
+      color: #fff;
+      border: 1px solid #777;
+      border-radius: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
 }
