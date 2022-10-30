@@ -16,7 +16,8 @@ export default function Pagination() {
           <Link key={n} href={`/${router?.pathname?.split('/')[1]}/${n}`}>
             <button
               style={{
-                backgroundColor: Number(router.query?.n) === n ? 'gray' : '',
+                backgroundColor:
+                  Number(router.query?.n) === n ? 'gray' : 'transparent',
               }}
             >
               {n}

@@ -1,3 +1,6 @@
+// Next
+import { useRouter } from 'next/router';
+
 // Styles
 import styles from './list.module.scss';
 
@@ -23,6 +26,7 @@ interface PageProps {
 
 export default function List(props: PageProps) {
   const { data } = props;
+  const router = useRouter();
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function List(props: PageProps) {
         {data.map((item, index) => (
           <li key={item.id}>
             <div className={styles.list__number}>
-              <span>{index + 1}</span>
+              <span>{index + 1 + 30 * (Number(router.query?.n) - 1)}</span>
             </div>
             <div className={styles.list__data}>
               <a href={item.url} target="_blank" rel="noreferrer">
@@ -41,7 +45,7 @@ export default function List(props: PageProps) {
                   <div className={styles.list__info_label}>
                     <svg viewBox="0 0 12 17">
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M8 15a.5.5 0 0 0 .5-.5V2.7l3.15 3.15a.5.5 0 0 0 .7-.7l-4-4a.5.5 0 0 0-.7 0l-4 4a.5.5 0 1 0 .7.7L7.5 2.71V14.5a.5.5 0 0 0 .5.5z"
                       />
                     </svg>
