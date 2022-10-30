@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { n } = context.query;
 
   try {
-    const response = await fetch(`https://api.hnpwa.com/v0/news/${n}.json`);
+    const response = await fetch(`https://api.hnpwa.com/v0/ask/${n}.json`);
     const err = response.ok ? false : response.status;
 
     const data = err === false ? await response.json() : [];
