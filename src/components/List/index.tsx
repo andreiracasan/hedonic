@@ -37,7 +37,15 @@ export default function List(props: PageProps) {
               <span>{index + 1 + 30 * (Number(router.query?.n) - 1)}</span>
             </div>
             <div className={styles.list__data}>
-              <a href={item.url} target="_blank" rel="noreferrer">
+              <a
+                href={
+                  item?.url.includes('item?id=')
+                    ? `/story/${item.id}`
+                    : item.url
+                }
+                target="_blank"
+                rel="noreferrer"
+              >
                 {item.title}
               </a>
               <div className={styles.list__info}>
